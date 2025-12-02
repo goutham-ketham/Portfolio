@@ -1,0 +1,246 @@
+/* =========================
+   Global Variables & Base
+   ========================= */
+:root {
+  --white-color: #ffffff;
+  --bg-color: #ffffff;
+  --bg-dark: #050816;
+  --primary-color: #0d6efd;
+  --accent-color: #ffb703;
+  --gray-color: #d3d3d3;
+  --text-muted: #6c757d;
+}
+
+/* Base */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--bg-color) !important;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  line-height: 1.6;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* =========================
+   Navbar
+   ========================= */
+.nav-item .nav-link {
+  color: var(--white-color);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.nav-item .nav-link:hover,
+.nav-item .nav-link:focus {
+  color: var(--accent-color);
+}
+
+.brand-dot {
+  color: var(--accent-color);
+}
+
+/* =========================
+   Hero Section
+   ========================= */
+.hero {
+  height: 100vh;
+  background: radial-gradient(circle at top, #1a1f3b, #050816 55%, #020617);
+  color: var(--white-color);
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-btn-primary {
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+  padding-inline: 2rem;
+}
+
+.hero-btn-primary:hover {
+  background: #0b5ed7;
+  color: #fff;
+}
+
+/* =========================
+   Sections
+   ========================= */
+.section-title {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+}
+
+/* Skills */
+#skills i {
+  height: 100px;
+  width: 100px;
+}
+
+.skills-card {
+  width: 25rem;
+  border: none;
+  border-radius: 1.25rem;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+}
+
+.icon-circle {
+  background: var(--primary-color);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
+
+/* =========================
+   Projects
+   ========================= */
+#projects img {
+  height: 230px;
+  object-fit: cover;
+}
+
+.project-card {
+  border: none;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card img {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.card-wrapper {
+  margin-bottom: 1rem;
+}
+
+/* =========================
+   About / Timeline
+   ========================= */
+#about .img,
+#about img,
+.hire-text h2 {
+  position: relative;
+}
+
+/* Vertical line */
+#about .img::before {
+  content: "";
+  left: 50%;
+  width: 4px;
+  position: absolute;
+  height: calc(100% + 140px);
+  background: var(--gray-color);
+  transform: translateX(-50%);
+}
+
+#about img,
+#about .hire-text h2 {
+  width: 140px;
+}
+
+#about .hire-text h2 {
+  height: 140px;
+}
+
+/* =========================
+   Resume Section
+   ========================= */
+#resume img {
+  width: 220px;
+}
+
+.resume-left {
+  border-right: 1px solid #e5e7eb;
+}
+
+.contact-info li {
+  font-size: 0.92rem;
+}
+
+/* Social icons */
+.social-icons a {
+  width: 40px;
+  height: 40px;
+}
+
+footer .social-icons a {
+  width: 30px;
+  height: 30px;
+}
+
+/* =========================
+   Contact Section
+   ========================= */
+#contact {
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-image: url("../images/contact-bg.jpeg");
+}
+
+#contact .form-control,
+#contact textarea {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 0.75rem;
+  border: 1px solid #ced4da;
+}
+
+/* =========================
+   Footer
+   ========================= */
+footer {
+  background: #020617;
+  color: #e5e7eb;
+  padding-bottom: 1rem;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media screen and (max-width: 990px) {
+  #skills .card {
+    width: calc(100% / 2 - 10px) !important;
+  }
+
+  .resume-left {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@media screen and (max-width: 668px) {
+  #skills .card,
+  #projects .card-wrapper {
+    width: 100% !important;
+  }
+
+  .hero {
+    padding-top: 6rem;
+  }
+}
